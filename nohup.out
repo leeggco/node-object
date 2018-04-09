@@ -1,0 +1,43 @@
+
+> books@0.0.0 start /home/york/books/node-books
+> node ./bin/www
+
+Tue, 29 Sep 2015 06:52:12 GMT express-session deprecated undefined resave option; provide resave option at app.js:33:9
+Tue, 29 Sep 2015 06:52:12 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:33:9
+listen : 80
+Port 80 is already in use
+
+npm ERR! Linux 3.10.0-123.9.3.el7.x86_64
+npm ERR! argv "/usr/local/node/bin/node" "/usr/local/node/bin/npm" "start"
+npm ERR! node v0.12.5
+npm ERR! npm  v2.11.2
+npm ERR! code ELIFECYCLE
+npm ERR! books@0.0.0 start: `node ./bin/www`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the books@0.0.0 start script 'node ./bin/www'.
+npm ERR! This is most likely a problem with the books package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls books
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /home/york/books/node-books/npm-debug.log
+Tue, 29 Sep 2015 07:03:18 GMT express-session deprecated undefined resave option; provide resave option at app.js:33:9
+Tue, 29 Sep 2015 07:03:18 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:33:9
+MongoDB连接成功!
+module.js:338
+    throw err;
+          ^
+Error: Cannot find module '/bin/www'
+    at Function.Module._resolveFilename (module.js:336:15)
+    at Function.Module._load (module.js:278:25)
+    at Function.Module.runMain (module.js:501:10)
+    at startup (node.js:129:16)
+    at node.js:814:3
+Tue, 29 Sep 2015 07:06:00 GMT express-session deprecated undefined resave option; provide resave option at app.js:33:9
+Tue, 29 Sep 2015 07:06:00 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:33:9
+MongoDB连接成功!

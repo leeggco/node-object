@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+    <link rel='stylesheet' href='/css/style.css'/>
+    <link rel='stylesheet' href='/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='/css/font-awesome.min.css'/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/common.js"></script>
+    <title>分类管理</title>
+	</head>
+	<body>
+    <table class="table">
+      <thead>
+          <tr>
+             <th>名称</th>
+             <th>数量</th>
+             <th>操作</th>
+          </tr>
+      </thead>
+      <tbody>
+        <% for(var i = 0; i < data2.length; i++) {%>
+          <tr>
+            <td>
+              <div class="cate-info"><span class="cateName"><%= data2[i].name %></span> <a href="javascript:;" class="beRename">重命名</a></div>
+              <div class="cate-edit">
+                <input type="text" class="cate-input" value="<%= data2[i].name %>"/>
+                <input type="button" class="btn btn-xs btn-primary cateRename" data-cid="<%= data2[i].id %>" value="确定">
+                <input type="button" class="btn btn-xs btn-danger cateCancl" value="取消">
+              </div>
+            </td>
+            <td class="cate-count">
+              <div class="count"><%= data2[i].books.length %></div>
+              <% for(var j = 0; j < data2[i].books.length; j++) {%>
+                  <p><%= data2[i].books[j] %> <a href="javascript:;" data-cid="<%= data2[i].id %>" data-bid="<%= data2[i].books[j] %>" class="emptyBook-del text-primary">删除</a></p>
+                <% for(var k = 0; k < data[i].books.length; k++) {%>
+                  <% if(data2[i].books[j] == data[i].books[k].id) {%>
+                    <p><%= data[i].books[k].id %> <%= data[i].books[k].name %></p>
+                  <% } %>
+                <% } %>
+              
+              <% } %>
+            </td>
+            <td><a href="javascript:;" data-cid="<%= data2[i].id %>" class="Category-del text-danger">删除分类</a></td>
+          </tr>
+        <% } %>
+
+      </tbody>
+    </table>
+
+	</body>
+</html>	

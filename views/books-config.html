@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+    <link rel='stylesheet' href='/css/style.css'/>
+    <link rel='stylesheet' href='/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='/css/font-awesome.min.css'/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/common.js"></script>
+    <title>书籍管理</title>
+	</head>
+	<body>
+    <table class="table">
+      <thead>
+          <tr>
+             <th>书名</th>
+             <th>bid</th>
+             <th>作者</th>
+             <th>分类</th>
+             <th>贡献者</th>
+             <th>下载次数</th>
+             <th>流量次数</th>
+             <th>操作</th>
+          </tr>
+      </thead>
+      <tbody>
+        <% books %>
+        <% for(var i = 0; i < books.length; i++) {%>
+          <tr>
+            <td data-bid="<%= books[i]._id %>"><a href="detail/<%= books[i].bid %>" target="_blank"><%= books[i].name %></a></td>
+            <td><%= books[i].bid %></td>
+            <td><%= books[i].author %></td>
+            <% if(books[i].category.length >= 1) { %> 
+            <td><%= books[i].category[0].name %></td>
+            <% }%>
+            <% if(books[i].from.length >= 1) { %> 
+            <td><a href="u/<%= books[i].from[0].username %>" target="_blank"><%= books[i].from[0].username %></a></td>
+            
+            <td><%= books[i].dv %></td>
+            <td><%= books[i].pv %></td>
+            <td><a href="book/edit/<%= books[i].bid %>" target="_blank">编辑</a> <a href="javascript:;" class="book-del text-danger" data-bid="<%= books[i]._id %>" data-uid="<%= books[i].from[0]._id %>"  data-cid="<%= books[i].category[0]._id %>">删除</a></td> 
+            <% }%>
+          </tr>
+        <% } %>
+       </tbody>
+    </table>
+	</body>
+</html>	

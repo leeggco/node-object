@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>来自洱海源头的生态兔肉</title>
+<link href="ddcss/doudou.css" rel="stylesheet" type="text/css" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<link rel="stylesheet" href="587/css/style.css" />
+<link rel="stylesheet" href="587/css/fullPage.css" />
+<style>
+  .x1 {background-color: #000; height:100%; color:#ccc;}
+  .container {top:50%; position:absolute; padding:0 10px;}
+</style>
+</head>
+<body>
+
+<div class="voice">
+    <span class="icon sound video_no"><img src="587/images/voice.png" alt=""></span>
+    <div class="video-t">
+       <span class="v1"><img src="587/images/v.png" alt="" /></span>
+       <span class="v2"><img src="587/images/v.png" alt="" /></span>
+       <span class="v3"><img src="587/images/v.png" alt="" /></span>
+    </div> 
+</div>
+<div class="fullPage">
+      
+     <section class="x1">
+       <div class="container"></div>
+     </section>
+
+     <section class="s1">
+     	<!--img class="y4" src="587/images/s1-2.png" alt="">
+     	<img class="y5" src="587/images/s1-3.png" alt="">
+     	<img class="y1" src="587/images/y1.png" alt="">
+     	<img class="y2" src="587/images/y2.png" alt="">
+     	<img class="y3" src="587/images/s1-4.png" alt=""-->
+
+
+     </section>
+     <section class="s1">
+     	<img class="y4" src="587/images/s2-1.png" alt="">
+     	<img class="y5" src="587/images/s2-2.png" alt="">
+     	<img class="y1" src="587/images/y1.png" alt="">
+     	<img class="y2" src="587/images/y2.png" alt="">
+     	<img class="y3" src="587/images/s2-3.png" alt="">
+     </section>
+     <section class="s1">
+     	<img class="y4" src="587/images/s3-1.png" alt="">
+     	<img class="y5" src="587/images/s3-2.png" alt="">
+     	<img class="y1" src="587/images/y1.png" alt="">
+     	<img class="y2" src="587/images/y2.png" alt="">
+     	<img class="y3" src="587/images/s3-3.png" alt="">
+     </section>
+     <section class="s1">
+     	<img class="y4" src="587/images/s5-1.png" alt="">
+     	<img class="y5" src="587/images/s5-2.png" alt="">
+     	<img class="y1" src="587/images/y1.png" alt="">
+     	<img class="y2" src="587/images/y2.png" alt="">
+     	<img class="y3" src="587/images/s5-3.png" alt="">
+     </section>
+     <section class="s1">
+     	<img class="y4" src="587/images/s6-1.png" alt="">
+     	<img class="y5" src="587/images/s6-2.png" alt="">
+     	<img class="y1" src="587/images/y1.png" alt="">
+     	<img class="y2" src="587/images/y2.png" alt="">
+     	<img class="y3" src="587/images/s6-3.png" alt="">
+     </section>
+
+     <section class="s-bj">
+         <img class="e" src="587/images/s.png" alt="">
+         <img class="a-swing" src="587/images/sys.png" alt="">
+     </section>
+
+     
+</div>
+
+<div id="arrow" class="icon up"></div>
+<audio src="http://img.liveapp.cn/userfiles/info/5/2014/09/53a53773698eb42611116907127550.mp3" loop controls autoplay="autoplay" id="audio" style="display:none;"></audio>
+
+<script src="587/js/zepto.js"></script>
+<script src="587/js/fullPage.js"></script>
+<script>
+    var myVideo=document.getElementById("audio");
+    var t=true;
+          function playVid()
+            {
+            myVideo.play();
+            }
+          function pauseVid()
+            {
+            myVideo.pause();
+            }
+       $(function(){
+        $('.voice').click(function(){
+           if(t){
+             pauseVid();
+              $(this).find('.sound').removeClass('video_no');
+               $('.video-t').hide();
+               t=false;            
+           }else{
+               playVid();
+               $(this).find('.sound').addClass('video_no');
+               $('.video-t').show();
+               t=true;
+           };
+      });
+   })
+
+
+  var s = '没遇到你之前我是不相信世界上有天使的。';
+  var con = $('.container');
+  var index = 0;
+  var length = s.length;
+  var tId = null;
+
+  function start(){
+    con.text('');
+    
+    tId=setInterval(function(){
+      con.append(s.charAt(index));
+      if(index++ === length){
+      clearInterval(tId);
+      index = 0;
+      start()
+      }
+    },300);
+  }
+
+start();
+
+</script>
+
+</body>
+</html>

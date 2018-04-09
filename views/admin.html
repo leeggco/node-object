@@ -1,0 +1,38 @@
+<% include header.html %>
+  <div class="row admin-wrap ">
+    <div class="col-md-2 layort-left">
+      <ul class="menu nav nav-pills nav-stacked" id="adminMenu">
+        <li><a href="javascript:;" data-scr="/books-config">书籍管理</a></li>
+        <li><a href="javascript:;" data-scr="/cate-config">分类管理</a></li>
+        <li><a href="javascript:;" data-scr="/tiezi-config">社区管理</a></li>
+        <li><a href="javascript:;" data-scr="/user-config">用户管理</a></li>
+      </ul>
+    </div>
+    <div class="col-md-10 layort-right">
+      <div class="admin-home">
+        <h2 class="text-center">お帰りなさい</h2>
+        <div class="infoTotal text-center">
+          <span><strong>书籍</strong>： <%= bt %></span>
+          <span><strong>用户</strong>： <%= ut %></span>
+        </div>
+        <div class="infoTotal text-center">
+          <span><strong>分类</strong>： <%= cat %></span>
+          <span><strong>帖子</strong>： <%= ct %> </span>
+        </div>
+      </div>
+      <iframe id="configIframe" width="100%" height="500" src="" frameborder="0"></iframe>
+    </div>
+    <script>
+      $(function(){
+        $('#adminMenu li ').click(function(){
+          var linkSrc = $(this).find('a').attr('data-scr');
+          $('#configIframe').attr('src', linkSrc);
+          $(this).addClass('active');
+          $(this).siblings().removeClass('active');
+          $('.admin-home').hide();
+          return true;
+        });
+      })
+    </script>
+  </div>
+<% include footer.html %>

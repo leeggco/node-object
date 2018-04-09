@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+    <link rel='stylesheet' href='/css/style.css'/>
+    <link rel='stylesheet' href='/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='/css/font-awesome.min.css'/>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+    <script src="/js/common.js"></script>
+    <title>帖子管理</title>
+	</head>
+	<body>
+    <table class="table">
+      <thead>
+        <tr>
+           <th>标题</th>
+           <th>作者</th>
+           <th>评论</th>
+           <th>浏览</th>
+           <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% for(var i = 0; i < data.length; i++) {%>
+        <tr>
+          <td><a href="/community/<%= data[i].cmid %>" target="_blank"><%= data[i].title %></a></td>
+          <td><a href="/u/<%= data[i].from[0].username %>" target="_blank"><%= data[i].from[0].username %></a></td>
+          <td><%= data[i].reply_count %></td>
+          <td><%= data[i].pv %></td>
+          <td><a href="javascript:;" class="tiezi-del text-danger" data-id="<%= data[i].id %>" data-uid="<%= data[i].from[0].id %>">删除</a></td>
+        </tr>
+      <% } %>
+      </tbody>
+    </table>
+
+	</body>
+</html>	

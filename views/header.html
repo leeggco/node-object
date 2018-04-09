@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= title %> </title>
+  <link rel='stylesheet' href='/css/style.css'/>
+  <link rel='stylesheet' href='/css/bootstrap.min.css'/>
+  <link rel='stylesheet' href='/css/font-awesome.min.css'/>
+  <link rel="stylesheet" href="/css/jquery.emojiarea.css">
+  <link rel="stylesheet" href="/fontello/css/fontello.css">
+  <meta name="baidu_union_verify" content="16de057d328efeb70ac254dfb7cfaae4">   
+  <meta name="keywords" content="天天书屋 最新收录 贡献排行 书友社区 互联网 交互设计 Node.js PHP C++ JavaScript Git JQuery  XHTML" />
+  <meta name="description" content="这里只有一些还不错的电子书。如果喜欢，请帮忙向同事和同学推荐本站。 天天书屋 " />
+  <link href="/img/64X64.ico" mce_href="/img/64X64.ico" rel="shortcut icon" />
+  <meta name="baidu_union_verify" content="923abca76073b2a7d91706dceceeb916">
+  <script src="/js/jquery-1.7.2.min.js"></script>
+  <script src="/js/jquery.emojiarea.js"></script>
+  <script src="/js/jquery.emoji.js"></script>
+  <script src="/basic/emojis.js"></script> 
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?3951459973faa5a1bc873c31dbe47013";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })(); 
+  </script>
+
+</head>
+<body>
+  <div class="header container">
+    <div class="row">
+
+      <div class="col-md-8">
+        <h3 class="logo"><a href="/"><img src="/img/logo2.png" alt=""/></a></h3>
+        <p>这里只有一些还不错的电子书。如果喜欢，请帮忙向同事和同学推荐本站。</p>
+      </div>
+
+      <div class="col-md-4 mt30">
+        <form class="form-inline pull-right" action="/s" method="get">
+          <div class="form-group">
+            <input type="text" autocomplete="off" class="form-control" name="wd" id="exampleInputPassword3" placeholder="输入书籍名称">
+          </div>
+          <button type="submit" class="btn btn-default">搜索</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row-wrap">
+      <div class="login_bar pull-right">
+        <% if(user) { %>
+          <a href="/u/<%= user %>" title="<%= user %>">
+		  <% if(gravatar) { %>
+			<img src="<%= gravatar %>" class="gravatar" width="24" alt="">
+		   <% } %>
+		  <span><%= user %></span></a> &nbsp;|&nbsp; <a href="/signout">退出</a>  
+        <% } else {%>
+          <a href="/signup">注册</a> &nbsp;|&nbsp; <a href="/signin">登录</a>  
+        <% } %>
+      </div>
+      <ul class="nav nav-tabs">
+        <li role="presentation" <% if(current == "home") { %> class="active" <% } %> ><a href="/">首页</a></li>
+        <li role="presentation" <% if(current == "newbooks") { %> class="active" <% } %> ><a href="/newbooks">最新收录</a></li>
+        <li role="presentation"<% if(current == "dedicate") { %> class="active" <% } %> ><a href="/dedicate">贡献排行</a></li>
+        <li role="presentation"<% if(current == "community") { %> class="active" <% } %>><a href="/community">社区</a></li>
+        <li role="presentation"<% if(current == "new") { %> class="active" <% } %>><a href="/book/new">新书上传</a></li>
+      </ul>
+    </div>
